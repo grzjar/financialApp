@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2>Witaj serdecznie na stronie aplikacji <h1>Financial Management</h1></h2><br>
+<h2>Witaj na stronie aplikacji <h1>Financial Management</h1></h2><br>
 
 <table border="1">
     <thead>

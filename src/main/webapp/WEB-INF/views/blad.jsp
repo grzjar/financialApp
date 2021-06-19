@@ -9,8 +9,9 @@
 </head>
 <body>
 
-<%--nie działa--%>
 <h2>Nieprawidłowy użytkownik lub hasło</h2><br>
+
+<a href="/">Wróć na stronę główną</a>
 
 </body>
 </html>

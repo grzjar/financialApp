@@ -4,18 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Stwórz użytkownika</title>
+    <title>Stwórz konto</title>
 </head>
 <body>
-<form:form method="post" modelAttribute="user">
-    <label>Nazwa użytkownika:
-        <form:input path="username"/>
+<form:form method="post" modelAttribute="account">
+    <label>Nazwa konta:
+        <form:input path="accountName"/>
     </label><br/>
-    <label>Email:
-        <form:input path="email"/>
-    </label><br/>
-    <label>Hasło:
-        <form:password path="password"/>
+    <label>Wartość konta:
+        <form:input path="accountValue"/>
     </label><br/>
     <form:button type="submit">Dodaj</form:button>
 </form:form>

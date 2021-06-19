@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -44,14 +46,16 @@ public class FinancialInitializationController {
     }
 
     @PostMapping("/login")
-    public String login(User user){
+    public String login(User user, HttpServletRequest request){
         List<User> users = userService.getAll();
         for(User u : users){
             if(u.getEmail().equals(user.getEmail()) && BCrypt.checkpw(user.getPassword(), u.getPassword())){
-                return "redirect:/";
+                HttpSession sess = request.getSession();
+                sess.setAttribute("userId", u.getId());
+                return "redirect:/logged/";
             }
         }
-        return "redirect:/blad";
+        return "blad";
     }
 
 }

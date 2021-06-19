@@ -11,7 +11,7 @@
     <label>Email:
         <form:input path="email"/>
     </label><br/>
-    <label>Password:
+    <label>Hasło:
         <form:password path="password"/>
     </label><br/>
     <form:button type="submit">Zaloguj</form:button>
