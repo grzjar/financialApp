@@ -8,13 +8,14 @@ import javax.persistence.*;
 @Table(name="users")
 @Getter @Setter @ToString
 @NoArgsConstructor @AllArgsConstructor
-public class User {
+public class User{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String userName;
+    private String username;
     @Column(unique = true)
     private String email;
     private String password;
+
 }
