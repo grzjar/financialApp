@@ -38,4 +38,9 @@ public class FinancialInitializationController {
         return "login";
     }
 
+    @PostMapping("/login")
+    public String login(){
+        return "redirect:/logged/";
+    }
+
 }
