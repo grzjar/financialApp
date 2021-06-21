@@ -8,8 +8,8 @@
 </head>
 <body>
 <form:form method="post" modelAttribute="user">
-    <label>Email:
-        <form:input path="email"/>
+    <label>Username:
+        <form:input path="username"/>
     </label><br/>
     <label>Hasło:
         <form:password path="password"/>

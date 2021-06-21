@@ -8,11 +8,14 @@
 </head>
 <body>
 <form:form method="post" modelAttribute="user">
+    <label>Imię:
+        <form:input path="firstname"/>
+    </label><br/>
+    <label>Nazwisko:
+        <form:input path="lastname"/>
+    </label><br/>
     <label>Nazwa użytkownika:
         <form:input path="username"/>
-    </label><br/>
-    <label>Email:
-        <form:input path="email"/>
     </label><br/>
     <label>Hasło:
         <form:password path="password"/>

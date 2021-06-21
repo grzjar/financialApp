@@ -1,4 +1,4 @@
-package pl.grzjar.bookAPI.config;
+package com.example.financialApp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
