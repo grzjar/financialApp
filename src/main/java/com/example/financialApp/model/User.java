@@ -23,9 +23,10 @@ public class User{
     private String lastname;
     @Column(nullable = false)
     private String password;
+    @Column(nullable = false)
     private String role;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Account> accounts = new ArrayList<>();
 
 }

@@ -5,11 +5,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Nieprawidłowy użytkownik lub hasło</title>
+    <title>Wylogowanie</title>
 </head>
 <body>
 
-<h2>Nieprawidłowy użytkownik lub hasło</h2><br>
+<h2>Wylogowano</h2><br>
 
 <a href="/">Wróć na stronę główną</a>
 

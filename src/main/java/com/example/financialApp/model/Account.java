@@ -34,5 +34,7 @@ public class Account {
         updatedOn = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy hh:mm:ss"));
     }
 
+    @ManyToOne
+    private User user;
 
 }
