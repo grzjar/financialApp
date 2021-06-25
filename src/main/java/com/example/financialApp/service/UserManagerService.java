@@ -14,7 +14,6 @@ public class UserManagerService {
     //wstrzykuję password encoder
     private final PasswordEncoder passwordEncoder;
 
-
     public UserManagerService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;

@@ -1,7 +1,11 @@
 package com.example.financialApp.service;
 
 import com.example.financialApp.model.Account;
+import com.example.financialApp.model.User;
 import com.example.financialApp.repository.AccountRepository;
+import com.example.financialApp.repository.UserRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,22 +15,29 @@ import java.util.Optional;
 public class AccountService{
 
     private final AccountRepository accountRepository;
+    private final UserRepository userRepository;
 
-    public AccountService(AccountRepository accountRepository){
+    public AccountService(AccountRepository accountRepository, UserRepository userRepository){
         this.accountRepository = accountRepository;
+        this.userRepository = userRepository;
     }
 
     public List<Account> getAll() {
-        return accountRepository.findAll();
+        User user = userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName()).orElseThrow(()-> new UsernameNotFoundException("Nie ma takiego bicia"));
+        return accountRepository.findAccountsByUser(user);
     }
 
-    public Account addNew(Account account, String username) {
+    public Account addNew(Account account) {
+        User user = userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName()).orElseThrow(()-> new UsernameNotFoundException("Nie ma takiego bicia"));
+        account.setUser(user);
         return accountRepository.save(account);
     }
 
     public Optional<Account> getById(long id) {
         return accountRepository.findById(id);
     }
+
+
 
     public void edit(Account account) {
         Optional<Account> a1 = getById(account.getId());

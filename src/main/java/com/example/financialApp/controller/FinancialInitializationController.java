@@ -5,13 +5,9 @@ import com.example.financialApp.service.UserManagerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;;
 
 @Controller
-@RequestMapping("/")
 public class FinancialInitializationController {
 
     private UserManagerService userManagerService;
@@ -33,8 +29,7 @@ public class FinancialInitializationController {
     }
 
     @GetMapping("/login")
-    public String login(Model model){
-        model.addAttribute("user", new User());
+    public String login(){
         return "login";
     }
 

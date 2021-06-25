@@ -7,14 +7,14 @@
     <title>Zaloguj użytkownika</title>
 </head>
 <body>
-<form:form method="post" modelAttribute="user">
+<form method="post">
     <label>Username:
-        <form:input path="username"/>
+        <input type="text" name="username" placeholder="username"/>
     </label><br/>
     <label>Hasło:
-        <form:password path="password"/>
+        <input type="password" name="password" placeholder="password"/>
     </label><br/>
-    <form:button type="submit">Zaloguj</form:button>
-</form:form>
+    <button type="submit">Zaloguj</button>
+</form>
 </body>
 </html>

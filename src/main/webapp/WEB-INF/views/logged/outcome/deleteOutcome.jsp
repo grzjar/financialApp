@@ -3,15 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Usuwanie konta</title>
+    <title>Usuwanie wydatku</title>
 </head>
 
 <body>
 <div><a href="/logout">Wyloguj</a></div>
 <form method="post" action="">
-    <p>Czy usunąć konto ${account.accountName} (id = ${account.id})?</p>
+    <p>Czy usunąć pozycję: ${outcome.category}, ${outcome.description}?</p>
     <p>
-        <input type="hidden" name="id" value="${account.id}"/>
+        <input type="hidden" name="id" value="${outcome.id}"/>
         <a href="/logged/logged">Nie</a><button type="submit">Tak</button>
     </p>
 </form>

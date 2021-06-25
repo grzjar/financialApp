@@ -4,17 +4,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Stwórz konto</title>
+    <title>Stwórz przychód</title>
 </head>
 
 <body>
 <div><a href="/logout">Wyloguj</a></div>
-<form:form method="post" modelAttribute="account">
-    <label>Nazwa konta:
-        <form:input path="accountName"/>
+<form:form method="post" modelAttribute="income">
+    <label>Kategoria:
+        <form:input path="category"/>
     </label><br/>
-    <label>Wartość konta:
-        <form:input path="accountValue"/>
+    <label>Kwota:
+        <form:input path="value"/>
+    </label><br/>
+    <label>Description:
+        <form:input path="description"/>
     </label><br/>
     <form:button type="submit">Dodaj</form:button>
 </form:form>

@@ -11,11 +11,13 @@
 
 <h2>Witaj na stronie aplikacji <h1>Financial Management</h1></h2><br>
 
+
 <table border="1">
     <thead>
     <th>Readme</th>
     <th>Rejestracja</th>
     <th>Logowanie</th>
+    <th>Wylogowanie</th>
     </thead>
 
     <tbody>
@@ -23,6 +25,7 @@
         <td><a href="https://github.com/grzjar/bookAPI#bookapi">Opis aplikacji</a></td>
         <td><a href="/create">Rejestracja</a></td>
         <td><a href="/login">Zaloguj</a></td>
+        <td><a href="/logout">Wyloguj</a></td>
     </tr>
     </tbody>
 </table>

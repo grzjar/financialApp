@@ -3,8 +3,6 @@ package com.example.financialApp.model;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -25,8 +23,5 @@ public class User{
     private String password;
     @Column(nullable = false)
     private String role;
-
-    @OneToMany(mappedBy = "user")
-    private List<Account> accounts = new ArrayList<>();
 
 }

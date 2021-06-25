@@ -1,24 +1,30 @@
 package com.example.financialApp.controller;
 
 import com.example.financialApp.model.Account;
+import com.example.financialApp.model.Income;
+import com.example.financialApp.model.Outcome;
 import com.example.financialApp.service.AccountService;
-import org.springframework.security.core.Authentication;
+import com.example.financialApp.service.IncomeService;
+import com.example.financialApp.service.OutcomeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
 @RequestMapping("/logged")
+
 public class AccountController {
 
     private AccountService accountService;
+    private IncomeService incomeService;
+    private OutcomeService outcomeService;
 
-    public AccountController(AccountService accountService){
+    public AccountController(AccountService accountService, IncomeService incomeService, OutcomeService outcomeService) {
         this.accountService = accountService;
+        this.incomeService = incomeService;
+        this.outcomeService = outcomeService;
     }
 
     @GetMapping("/")
@@ -35,13 +41,18 @@ public class AccountController {
     }
 
     @PostMapping("/create")
-    public String create(Account account, Authentication currentUser){
-        accountService.addNew(account, currentUser.getName());
+    public String create(Account account){
+        accountService.addNew(account);
         return "redirect:/logged/";
     }
 
-    @GetMapping("/show")
-    public String showOne(Model model, Long id){
+    @GetMapping("/show/{id}")
+    public String showOne(Model model, @PathVariable Long id){
+        List<Income> incomes = incomeService.getAll(id);
+        List<Outcome> outcomes = outcomeService.getAll(id);
+        model.addAttribute("incomes", incomes);
+        model.addAttribute("outcomes", outcomes);
+        model.addAttribute("id", id);
         model.addAttribute("account", accountService.getById(id).get());
         return "logged/showOneAccount";
     }

@@ -8,9 +8,9 @@
     <title>Financial Management</title>
 </head>
 <body>
-<%--Do zrobienia--%>
-<h2>Witaj nazwaUżytkownika</h2><br>
-
+<%--Do zrobienia //nie działa mi ten user--%>
+<h2>Witaj <c:out value="${user.getUsername}"/></h2><br>
+<div><a href="/logout">Wyloguj</a></div>
 <div><a href="/logged/create">Utwórz konto</a></div>
 
 <table border="1">
@@ -28,7 +28,7 @@
         <td><c:out value="${account.accountValue}"/></td>
         <td><c:out value="${account.createdOn}"/></td>
         <td><c:out value="${account.updatedOn}"/></td>
-        <td><a href="/logged/show?id=${account.id}">Pokaż</a>
+        <td><a href="/logged/show/${account.id}">Pokaż</a>
             <a href="/logged/edit?id=${account.id}">Edytuj</a>
             <a href="/logged/delete?id=${account.id}">Usuń</a></td>
     </tr>

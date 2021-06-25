@@ -7,34 +7,26 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Entity
-@Table(name="accounts")
+@Table(name="outcomes")
 @Getter @Setter @ToString
 @NoArgsConstructor @AllArgsConstructor
-public class Account {
+public class Outcome {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "account_name")
-    private String accountName;
-    @Column(scale = 2, name = "account_value")
-    private Double accountValue;
+    private String description;
+    private String category;
+    @Column(scale = 2)
+    private Double value;
     @Column(name="created_on")
     private String createdOn;
-    @Column(name="updated_on")
-    private String updatedOn;
 
     @PrePersist
     private void prePersist(){
         createdOn = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy hh:mm:ss"));
     }
 
-    @PreUpdate
-    private void preUpdate(){
-        updatedOn = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy hh:mm:ss"));
-    }
-
     @ManyToOne
-    private User user;
-
+    public Account account;
 }

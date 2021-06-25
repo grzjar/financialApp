@@ -12,10 +12,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private CustomUserDetailService customUserDetailService;
+    private final CustomUserDetailService userDetailsService;
 
-    public SecurityConfig(CustomUserDetailService customUserDetailService) {
-        this.customUserDetailService = customUserDetailService;
+    public SecurityConfig(CustomUserDetailService userDetailsService) {
+        this.userDetailsService = userDetailsService;
     }
 
 
@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //uwierzytelnienie użytkownika
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(customUserDetailService).passwordEncoder(passwordEncoder());
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 
     //proces autoryzacji
