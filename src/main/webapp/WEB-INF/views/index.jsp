@@ -22,7 +22,7 @@
 
     <tbody>
     <tr>
-        <td><a href="https://github.com/grzjar/bookAPI#bookapi">Opis aplikacji</a></td>
+        <td><a href="https://github.com/grzjar/financialApp#readme">Opis aplikacji</a></td>
         <td><a href="/create">Rejestracja</a></td>
         <td><a href="/login">Zaloguj</a></td>
         <td><a href="/logout">Wyloguj</a></td>
