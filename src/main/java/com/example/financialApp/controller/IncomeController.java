@@ -5,10 +5,10 @@ import com.example.financialApp.service.AccountService;
 import com.example.financialApp.service.IncomeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 @RequestMapping("/logged/")
@@ -22,6 +22,12 @@ public class IncomeController {
         this.accountService = accountService;
     }
 
+    @ModelAttribute("categories")
+    public List<String> selectCategory(){
+        String[] a = new String[]{"cat1", "cat2", "cat3"};
+        return Arrays.asList(a);
+    }
+
     @GetMapping("show/{id}/createIncome")
     public String create(Model model){
         model.addAttribute("income", new Income());
@@ -31,6 +37,7 @@ public class IncomeController {
     @PostMapping("show/{id}/createIncome")
     public String create(Income income, @PathVariable Long id){
         income.setAccount(accountService.getById(id).get());
+        income.setId(null);
         incomeService.addNew(income);
         return "redirect:/logged/";
     }

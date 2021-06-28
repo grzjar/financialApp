@@ -9,7 +9,7 @@
 </head>
 <body>
 <%--Do zrobienia //nie działa mi ten user--%>
-<h2>Witaj <c:out value="${user.getUsername}"/></h2><br>
+<h2>Witaj <c:out value="${user.firstname}"/></h2><br>
 <div><a href="/logout">Wyloguj</a></div>
 <div><a href="/logged/create">Utwórz konto</a></div>
 

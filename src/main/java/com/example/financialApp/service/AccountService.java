@@ -22,14 +22,18 @@ public class AccountService{
         this.userRepository = userRepository;
     }
 
+    //wydzielenie metody, by mieć dostęp do Usera
+    public User getUser(){
+        User user = userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName()).orElseThrow(()-> new UsernameNotFoundException("Nie ma takiego użytkownika"));
+        return user;
+    }
+
     public List<Account> getAll() {
-        User user = userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName()).orElseThrow(()-> new UsernameNotFoundException("Nie ma takiego bicia"));
-        return accountRepository.findAccountsByUser(user);
+        return accountRepository.findAccountsByUser(getUser());
     }
 
     public Account addNew(Account account) {
-        User user = userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName()).orElseThrow(()-> new UsernameNotFoundException("Nie ma takiego bicia"));
-        account.setUser(user);
+        account.setUser(getUser());
         return accountRepository.save(account);
     }
 

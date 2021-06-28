@@ -8,9 +8,6 @@
     <title>Financial Management</title>
 </head>
 <body>
-<%--Do zrobienia--%>
-<h2>Witaj nazwaUżytkownika</h2><br>
-
 <div><a href="/logout">Wyloguj</a></div>
 
 <div><a href="/">Powrót do strony głównej</a>, <a href="/logged/show/${id}/createIncome">Dodaj przychód</a>,
@@ -20,6 +17,7 @@
     <thead>
     <th>Nazwa konta</th>
     <th>Wartość</th>
+    <th>Waluta</th>
     <th>Data stworzenia</th>
     <th>Ostatnia aktualizacja</th>
     </thead>
@@ -27,6 +25,7 @@
         <tr>
             <td><c:out value="${account.accountName}"/></td>
             <td><c:out value="${account.accountValue}"/></td>
+            <td><c:out value="${account.currency}"/></td>
             <td><c:out value="${account.createdOn}"/></td>
             <td><c:out value="${account.updatedOn}"/></td>
         </tr>

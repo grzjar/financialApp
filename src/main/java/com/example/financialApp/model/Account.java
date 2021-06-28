@@ -19,6 +19,7 @@ public class Account {
     private String accountName;
     @Column(scale = 2, name = "account_value")
     private Double accountValue;
+    private String currency = "PLN";
     @Column(name="created_on")
     private String createdOn;
     @Column(name="updated_on")

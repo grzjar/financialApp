@@ -3,7 +3,9 @@ package com.example.financialApp.controller;
 import com.example.financialApp.model.Account;
 import com.example.financialApp.model.Income;
 import com.example.financialApp.model.Outcome;
+import com.example.financialApp.model.User;
 import com.example.financialApp.service.AccountService;
+import com.example.financialApp.service.CustomUserDetailService;
 import com.example.financialApp.service.IncomeService;
 import com.example.financialApp.service.OutcomeService;
 import org.springframework.stereotype.Controller;
@@ -21,7 +23,7 @@ public class AccountController {
     private IncomeService incomeService;
     private OutcomeService outcomeService;
 
-    public AccountController(AccountService accountService, IncomeService incomeService, OutcomeService outcomeService) {
+    public AccountController(AccountService accountService, IncomeService incomeService, OutcomeService outcomeService, CustomUserDetailService userDetailService) {
         this.accountService = accountService;
         this.incomeService = incomeService;
         this.outcomeService = outcomeService;
@@ -30,6 +32,8 @@ public class AccountController {
     @GetMapping("/")
     public String showAll(Model model){
         List<Account> accounts = accountService.getAll();
+        User user = accountService.getUser();
+        model.addAttribute("user", user);
         model.addAttribute("accounts", accounts);
         return "logged/logged";
     }

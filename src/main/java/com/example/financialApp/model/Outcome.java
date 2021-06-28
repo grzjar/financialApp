@@ -19,6 +19,7 @@ public class Outcome {
     private String category;
     @Column(scale = 2)
     private Double value;
+    private String currency = "PLN";
     @Column(name="created_on")
     private String createdOn;
 

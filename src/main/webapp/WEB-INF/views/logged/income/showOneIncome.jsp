@@ -17,6 +17,7 @@
     <thead>
     <th>Kategoria</th>
     <th>Wartość</th>
+    <th>Waluta</th>
     <th>Data stworzenia</th>
     <th>Opis</th>
     </thead>
@@ -24,6 +25,7 @@
     <tr>
         <td><c:out value="${income.category}"/></td>
         <td><c:out value="${income.value}"/></td>
+        <td><c:out value="${income.currency}"/></td>
         <td><c:out value="${income.createdOn}"/></td>
         <td><c:out value="${income.description}"/></td>
     </tr>

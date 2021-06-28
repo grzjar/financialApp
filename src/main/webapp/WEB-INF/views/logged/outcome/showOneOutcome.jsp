@@ -17,6 +17,7 @@
     <thead>
     <th>Kategoria</th>
     <th>Wartość</th>
+    <th>Waluta</th>
     <th>Data stworzenia</th>
     <th>Opis</th>
     </thead>
@@ -24,6 +25,7 @@
     <tr>
         <td><c:out value="${outcome.category}"/></td>
         <td><c:out value="${outcome.value}"/></td>
+        <td><c:out value="${outcome.currency}"/></td>
         <td><c:out value="${outcome.createdOn}"/></td>
         <td><c:out value="${outcome.description}"/></td>
     </tr>
