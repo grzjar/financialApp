@@ -20,6 +20,9 @@
     <th>Waluta</th>
     <th>Data stworzenia</th>
     <th>Ostatnia aktualizacja</th>
+    <th>Suma wpływów</th>
+    <th>Suma wydatków</th>
+    <th>Suma</th>
     </thead>
     <tbody>
         <tr>
@@ -28,6 +31,9 @@
             <td><c:out value="${account.currency}"/></td>
             <td><c:out value="${account.createdOn}"/></td>
             <td><c:out value="${account.updatedOn}"/></td>
+            <td><c:out value="${account.sumIncome}"/></td>
+            <td><c:out value="${account.sumOutcome}"/></td>
+            <td><c:out value="${account.sum}"/></td>
         </tr>
     </tbody>
 

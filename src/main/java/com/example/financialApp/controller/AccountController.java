@@ -57,7 +57,9 @@ public class AccountController {
         model.addAttribute("incomes", incomes);
         model.addAttribute("outcomes", outcomes);
         model.addAttribute("id", id);
-        model.addAttribute("account", accountService.getById(id).get());
+        Account account = accountService.getById(id).get();
+//        account.setAccountValue(accountService.sum(account.getSumIncome(), account.getSumOutcome(), account.getAccountValue()));
+        model.addAttribute("account", account);
         return "logged/showOneAccount";
     }
 

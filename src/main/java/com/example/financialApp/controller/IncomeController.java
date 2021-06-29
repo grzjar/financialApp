@@ -24,8 +24,8 @@ public class IncomeController {
 
     @ModelAttribute("categories")
     public List<String> selectCategory(){
-        String[] a = new String[]{"cat1", "cat2", "cat3"};
-        return Arrays.asList(a);
+        List<String> categoryList = Arrays.asList("cat1", "car2", "cat3");
+        return categoryList;
     }
 
     @GetMapping("show/{id}/createIncome")

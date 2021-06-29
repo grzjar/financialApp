@@ -1,6 +1,7 @@
 package com.example.financialApp.model;
 
 import lombok.*;
+import org.hibernate.annotations.Formula;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -24,6 +25,17 @@ public class Account {
     private String createdOn;
     @Column(name="updated_on")
     private String updatedOn;
+  //  @Column
+    @Formula("(select sum(i.value) from incomes i where i.account_id = id)")
+    private Double sumIncome;
+ //   @Column
+    @Formula("(select sum(o.value) from outcomes o where o.account_id = id)")
+    private Double sumOutcome;
+
+    @Formula("account_value + sumIncome - sumOutcome")
+    private Double sum;
+
+
 
     @PrePersist
     private void prePersist(){
