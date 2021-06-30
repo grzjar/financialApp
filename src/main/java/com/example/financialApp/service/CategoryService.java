@@ -4,6 +4,7 @@ import com.example.financialApp.model.Category;
 import com.example.financialApp.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,8 +17,13 @@ public class CategoryService {
         this.categoryRepository = categoryRepository;
     }
 
-    public List<Category> getAll(Long id){
-        return categoryRepository.findAllByAccount_Id(id);
+    public List<String> getAll(Long id){
+        List<Category> categoryList = categoryRepository.findAllByAccount_Id(id);
+        List<String> catList = new ArrayList<>();
+        for(Category c : categoryList){
+            catList.add(c.getCategoryName());
+        }
+        return catList;
     }
 
     public Category addNew(Category category){
@@ -47,10 +53,13 @@ public class CategoryService {
     }
 
     public void deleteAllById(long id){
-        List<Category> list = getAll(id);
+        List<Category> list = getAllX(id);
         for(Category c : list){
             delete(c.getId());
         }
     }
 
+    public List<Category> getAllX(Long id) {
+        return categoryRepository.findAllByAccount_Id(id);
+    }
 }

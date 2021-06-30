@@ -48,7 +48,7 @@ public class CategoryController {
 
     @GetMapping("show/{id}/show-all")
     public String showAll(Model model, @PathVariable Long id){
-        List<Category> categories = categoryService.getAll(id);
+        List<Category> categories = categoryService.getAllX(id);
         model.addAttribute("categories", categories);
         return "logged/category/showAll";
     }

@@ -11,7 +11,7 @@
 
 <h2>Wylogowano</h2><br>
 
-<a href="/">Wróć na stronę główną</a>
+<a href="/logged">Wróć na stronę główną</a>
 
 </body>
 </html>

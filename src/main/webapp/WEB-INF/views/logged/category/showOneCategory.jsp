@@ -10,7 +10,7 @@
 <body>
 <div><a href="/logout">Wyloguj</a></div>
 
-<div><a href="/">Powrót do strony głównej</a>
+<div><a href="/logged">Powrót do strony głównej</a>
 
 <table border="1">
     <thead>

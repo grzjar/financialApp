@@ -10,7 +10,7 @@
 <body>
 <div><a href="/logout">Wyloguj</a></div>
 
-<div><a href="/">Powrót do strony głównej</a>, <a href="/logged/show/${id}/createIncome">Dodaj przychód</a>,
+<div><a href="/logged/">Powrót do strony głównej</a>, <a href="/logged/show/${id}/createIncome">Dodaj przychód</a>,
 <a href="/logged/show/${id}/createOutcome">Dodaj wydatek</a>, <a href="/logged/show/${id}/show-all">Pokaż dostępne kategorie</a></div>
 
 <table border="1">

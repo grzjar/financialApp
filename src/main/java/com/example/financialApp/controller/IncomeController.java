@@ -26,18 +26,9 @@ public class IncomeController {
         this.categoryService = categoryService;
     }
 
-    @ModelAttribute("categories")
-    public List<String> selectCategory(@PathVariable Long id){
-        List<Category> categoryList = categoryService.getAll(id);
-        List<String> catList = new ArrayList<>();
-        for(Category c : categoryList){
-            catList.add(c.getCategoryName());
-        }
-        return catList;
-    }
-
     @GetMapping("show/{id}/createIncome")
-    public String create(Model model){
+    public String create(Model model, @PathVariable Long id){
+        model.addAttribute("categories", categoryService.getAll(id));
         model.addAttribute("income", new Income());
         return "logged/income/createIncome";
     }
@@ -52,6 +43,7 @@ public class IncomeController {
 
     @GetMapping("show/{id1}/show-income/{id2}")
     public String show(Model model, @PathVariable Long id1, @PathVariable Long id2){
+        model.addAttribute("categories", categoryService.getAll(id1));
         model.addAttribute("id", id1);
         model.addAttribute("income", incomeService.getById(id2).get());
         return "logged/income/showOneIncome";
@@ -59,6 +51,7 @@ public class IncomeController {
 
     @GetMapping("show/{id1}/edit-income/{id2}")
     public String edit(Model model, @PathVariable Long id1, @PathVariable Long id2){
+        model.addAttribute("categories", categoryService.getAll(id1));
         model.addAttribute("id", id1);
         model.addAttribute("income", incomeService.getById(id2).get());
         return "logged/income/editIncome";
@@ -73,6 +66,7 @@ public class IncomeController {
 
     @GetMapping("show/{id1}/delete-income/{id2}")
     private String delete(Model model, @PathVariable Long id1, @PathVariable Long id2){
+        model.addAttribute("categories", categoryService.getAll(id1));
         model.addAttribute("id", id1);
         model.addAttribute("income", incomeService.getById(id2).get());
         return "logged/income/deleteIncome";
