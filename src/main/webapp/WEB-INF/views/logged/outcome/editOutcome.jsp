@@ -11,7 +11,10 @@
 <div><a href="/logout">Wyloguj</a></div>
 <form:form method="post" modelAttribute="outcome">
     <label>Kategoria:
-        <form:input path="category"/>
+        <form:select path="category">
+            <form:option value="-" label="--Please Select--"/>
+            <form:options items="${categories}"/>
+        </form:select> lub <a href="createCategory">Dodaj kategorię</a>.
     </label><br/>
     <label>Kwota:
         <form:input path="value"/>

@@ -65,7 +65,7 @@ public class OutcomeController {
     }
 
     @PostMapping("show/{id1}/edit-outcome/{id2}")
-    public String edit(Outcome outcome, @PathVariable Long id1, Model model){
+    public String edit(Outcome outcome, @PathVariable Long id1, Model model, @PathVariable Long id2){
         model.addAttribute("id", id1);
         outcomeService.edit(outcome);
         return "redirect:/logged/show/{id1}";

@@ -65,7 +65,7 @@ public class IncomeController {
     }
 
     @PostMapping("show/{id1}/edit-income/{id2}")
-    public String edit(Income income, @PathVariable Long id1, Model model){
+    public String edit(Income income, @PathVariable Long id1, Model model, @PathVariable Long id2){
         model.addAttribute("id", id1);
         incomeService.edit(income);
         return "redirect:/logged/show/{id1}";
