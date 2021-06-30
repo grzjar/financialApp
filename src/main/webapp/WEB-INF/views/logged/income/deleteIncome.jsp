@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Usuwanie przychodu</title>
+    <title>Usuń przychód</title>
 </head>
 
 <body>

@@ -61,14 +61,4 @@ public class AccountService{
         }
     }
 
-//    public Double sum(Double sumIncome, Double sumOutcome, Double accountValue) {
-//        double res = accountValue;
-//        if(sumIncome != 0){
-//            res += sumIncome;
-//        }
-//        if(sumOutcome != 0){
-//            res -= sumOutcome;
-//        }
-//        return res;
-//    }
 }

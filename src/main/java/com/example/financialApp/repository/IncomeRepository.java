@@ -9,7 +9,6 @@ import java.util.List;
 @Repository
 public interface IncomeRepository extends JpaRepository<Income, Long> {
 
-    //w repozytorium mogę zapisać masę zapytań
     List<Income> findAllByAccount_Id(Long id);
 
 }

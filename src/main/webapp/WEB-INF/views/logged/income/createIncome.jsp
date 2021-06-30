@@ -14,7 +14,7 @@
         <form:select path="category">
                 <form:option value="-" label="--Please Select--"/>
                 <form:options items="${categories}"/>
-        </form:select>
+        </form:select> lub <a href="createCategory">Dodaj kategorię</a>.
     </label><br/>
     <label>Kwota:
         <form:input path="value"/>

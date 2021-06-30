@@ -1,14 +1,15 @@
 package com.example.financialApp.controller;
 
-import com.example.financialApp.model.Income;
+import com.example.financialApp.model.Category;
 import com.example.financialApp.model.Outcome;
 import com.example.financialApp.service.AccountService;
+import com.example.financialApp.service.CategoryService;
 import com.example.financialApp.service.OutcomeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -17,16 +18,22 @@ public class OutcomeController {
 
     private OutcomeService outcomeService;
     private AccountService accountService;
+    private CategoryService categoryService;
 
-    public OutcomeController(OutcomeService outcomeService, AccountService accountService) {
+    public OutcomeController(OutcomeService outcomeService, AccountService accountService, CategoryService categoryService) {
         this.outcomeService = outcomeService;
         this.accountService = accountService;
+        this.categoryService = categoryService;
     }
 
     @ModelAttribute("categories")
-    public List<String> selectCategory(){
-        String[] a = new String[]{"cat1", "cat2", "cat3"};
-        return Arrays.asList(a);
+    public List<String> selectCategory(@PathVariable Long id){
+        List<Category> categoryList = categoryService.getAll(id);
+        List<String> catList = new ArrayList<>();
+        for(Category c : categoryList){
+            catList.add(c.getCategoryName());
+        }
+        return catList;
     }
 
     @GetMapping("show/{id}/createOutcome")

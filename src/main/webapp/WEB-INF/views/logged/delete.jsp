@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Usuwanie konta</title>
+    <title>Usuń konto</title>
 </head>
 
 <body>

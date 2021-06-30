@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Usuwanie wydatku</title>
+    <title>Usuń wydatku</title>
 </head>
 
 <body>

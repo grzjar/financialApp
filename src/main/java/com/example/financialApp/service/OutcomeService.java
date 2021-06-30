@@ -51,4 +51,11 @@ public class OutcomeService {
             outcomeRepository.deleteById(id);
         }
     }
+
+    public void deleteAllById(long id){
+        List<Outcome> list = getAll(id);
+        for(Outcome o : list){
+            delete(o.getId());
+        }
+    }
 }

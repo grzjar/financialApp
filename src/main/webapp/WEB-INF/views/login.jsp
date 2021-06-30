@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Zaloguj użytkownika</title>
+    <title>Logowanie</title>
 </head>
 <body>
 <form method="post">

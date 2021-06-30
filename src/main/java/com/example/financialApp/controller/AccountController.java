@@ -1,13 +1,7 @@
 package com.example.financialApp.controller;
 
-import com.example.financialApp.model.Account;
-import com.example.financialApp.model.Income;
-import com.example.financialApp.model.Outcome;
-import com.example.financialApp.model.User;
-import com.example.financialApp.service.AccountService;
-import com.example.financialApp.service.CustomUserDetailService;
-import com.example.financialApp.service.IncomeService;
-import com.example.financialApp.service.OutcomeService;
+import com.example.financialApp.model.*;
+import com.example.financialApp.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -22,11 +16,13 @@ public class AccountController {
     private AccountService accountService;
     private IncomeService incomeService;
     private OutcomeService outcomeService;
+    private CategoryService categoryService;
 
-    public AccountController(AccountService accountService, IncomeService incomeService, OutcomeService outcomeService, CustomUserDetailService userDetailService) {
+    public AccountController(AccountService accountService, IncomeService incomeService, OutcomeService outcomeService, CustomUserDetailService userDetailService, CategoryService categoryService) {
         this.accountService = accountService;
         this.incomeService = incomeService;
         this.outcomeService = outcomeService;
+        this.categoryService = categoryService;
     }
 
     @GetMapping("/")
@@ -47,6 +43,9 @@ public class AccountController {
     @PostMapping("/create")
     public String create(Account account){
         accountService.addNew(account);
+        categoryService.addNew(new Category(null, "Wartość inicjalna", account));
+        categoryService.addNew(new Category(null, "Mieszkanie", account));
+        categoryService.addNew(new Category(null, "Jedzenie", account));
         return "redirect:/logged/";
     }
 
@@ -57,9 +56,7 @@ public class AccountController {
         model.addAttribute("incomes", incomes);
         model.addAttribute("outcomes", outcomes);
         model.addAttribute("id", id);
-        Account account = accountService.getById(id).get();
-//        account.setAccountValue(accountService.sum(account.getSumIncome(), account.getSumOutcome(), account.getAccountValue()));
-        model.addAttribute("account", account);
+        model.addAttribute("account", accountService.getById(id).get());
         return "logged/showOneAccount";
     }
 
@@ -83,6 +80,9 @@ public class AccountController {
 
     @PostMapping("/delete")
     private String delete(Account account){
+        incomeService.deleteAllById(account.getId());
+        outcomeService.deleteAllById(account.getId());
+        categoryService.deleteAllById(account.getId());
         accountService.delete(account.getId());
         return "redirect:/logged/";
     }

@@ -8,7 +8,6 @@
     <title>Financial Management</title>
 </head>
 <body>
-<%--Do zrobienia //nie działa mi ten user--%>
 <h2>Witaj <c:out value="${user.firstname}"/></h2><br>
 <div><a href="/logout">Wyloguj</a></div>
 <div><a href="/logged/create">Utwórz konto</a></div>
@@ -16,18 +15,14 @@
 <table border="1">
     <thead>
     <th>Nazwa konta</th>
-    <th>Wartość</th>
     <th>Data stworzenia</th>
-    <th>Ostatnia aktualizacja</th>
     <th>Akcja</th>
     </thead>
     <tbody>
     <c:forEach items="${accounts}" var="account">
     <tr>
         <td><c:out value="${account.accountName}"/></td>
-        <td><c:out value="${account.accountValue}"/></td>
         <td><c:out value="${account.createdOn}"/></td>
-        <td><c:out value="${account.updatedOn}"/></td>
         <td><a href="/logged/show/${account.id}">Pokaż</a>
             <a href="/logged/edit?id=${account.id}">Edytuj</a>
             <a href="/logged/delete?id=${account.id}">Usuń</a></td>

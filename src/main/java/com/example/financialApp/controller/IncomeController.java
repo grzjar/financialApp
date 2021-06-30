@@ -1,13 +1,15 @@
 package com.example.financialApp.controller;
 
+import com.example.financialApp.model.Category;
 import com.example.financialApp.model.Income;
 import com.example.financialApp.service.AccountService;
+import com.example.financialApp.service.CategoryService;
 import com.example.financialApp.service.IncomeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -16,16 +18,22 @@ public class IncomeController {
 
     private IncomeService incomeService;
     private AccountService accountService;
+    private CategoryService categoryService;
 
-    public IncomeController(IncomeService incomeService, AccountService accountService) {
+    public IncomeController(IncomeService incomeService, AccountService accountService, CategoryService categoryService) {
         this.incomeService = incomeService;
         this.accountService = accountService;
+        this.categoryService = categoryService;
     }
 
     @ModelAttribute("categories")
-    public List<String> selectCategory(){
-        List<String> categoryList = Arrays.asList("cat1", "car2", "cat3");
-        return categoryList;
+    public List<String> selectCategory(@PathVariable Long id){
+        List<Category> categoryList = categoryService.getAll(id);
+        List<String> catList = new ArrayList<>();
+        for(Category c : categoryList){
+            catList.add(c.getCategoryName());
+        }
+        return catList;
     }
 
     @GetMapping("show/{id}/createIncome")

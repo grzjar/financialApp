@@ -16,7 +16,6 @@ public class IncomeService {
         this.incomeRepository = incomeRepository;
     }
 
-    //istnieje problem z nadpisywaniem się obiektów w liście/bazie danych
     public List<Income> getAll(Long id){
         return incomeRepository.findAllByAccount_Id(id);
     }
@@ -50,6 +49,13 @@ public class IncomeService {
         Optional<Income> i1 = getById(id);
         if(i1.isPresent()){
             incomeRepository.deleteById(id);
+        }
+    }
+
+    public void deleteAllById(long id){
+        List<Income> list = getAll(id);
+        for(Income i : list){
+            delete(i.getId());
         }
     }
 }

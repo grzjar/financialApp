@@ -18,21 +18,16 @@ public class Account {
     private Long id;
     @Column(name = "account_name")
     private String accountName;
-    @Column(scale = 2, name = "account_value")
-    private Double accountValue;
     private String currency = "PLN";
     @Column(name="created_on")
     private String createdOn;
-    @Column(name="updated_on")
-    private String updatedOn;
-  //  @Column
+
+
     @Formula("(select sum(i.value) from incomes i where i.account_id = id)")
     private Double sumIncome;
- //   @Column
     @Formula("(select sum(o.value) from outcomes o where o.account_id = id)")
     private Double sumOutcome;
-
-    @Formula("account_value + sumIncome - sumOutcome")
+    @Formula("((select sum(i.value) from incomes i where i.account_id = id) - (select sum(o.value) from outcomes o where o.account_id = id))")
     private Double sum;
 
 
@@ -42,10 +37,6 @@ public class Account {
         createdOn = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy hh:mm:ss"));
     }
 
-    @PreUpdate
-    private void preUpdate(){
-        updatedOn = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy hh:mm:ss"));
-    }
 
     @ManyToOne
     private User user;
