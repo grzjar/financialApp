@@ -17,7 +17,6 @@
     <th>Readme</th>
     <th>Rejestracja</th>
     <th>Logowanie</th>
-    <th>Wylogowanie</th>
     </thead>
 
     <tbody>
@@ -25,7 +24,6 @@
         <td><a href="https://github.com/grzjar/financialApp#readme">Opis aplikacji</a></td>
         <td><a href="/create">Rejestracja</a></td>
         <td><a href="/login">Zaloguj</a></td>
-        <td><a href="/logout">Wyloguj</a></td>
     </tr>
     </tbody>
 </table>
