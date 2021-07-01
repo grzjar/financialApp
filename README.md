@@ -14,11 +14,11 @@ Ponadto, aplikacja wykorzystuje bazę danych w MySQL, 8 Dialect.
 
 Aplikacja nie pozwala na korzystanie z dalszych funkcjonalności bez uprzedniej rejestracji i zalogwania użytkownika.
 
-<b>Zalogowany użytkownik:</b><br>
+<b>Zalogowany użytkownik może:</b><br>
 - utworzyć konto
 - wylogować się
 
-<b>W następnym krokach:</b>
+<b>Następne kroki:</b>
 Po utworzeniu konta użytkownik może skorzystać z kilku akcji: <i>Pokaż</i>, <i>Edytuj</i> lub <i>Usuń</i>.
 
 Każdorazowe przejście do konta przy użyciu akcji <i>Pokaż</i>, wyświetli szczegółowe dane konta z sumą przychodów, wydatków i sumą na koncie*.<br>
