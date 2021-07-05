@@ -25,7 +25,7 @@ public class FinancialInitializationController {
     @PostMapping("/create")
     public String create(User user){
         userManagerService.registerUser(user);
-        return "redirect:/";
+        return "redirect:/login";
     }
 
     @GetMapping("/login")

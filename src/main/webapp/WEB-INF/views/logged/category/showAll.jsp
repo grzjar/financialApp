@@ -1,34 +1,46 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Kategorie</title>
+<%@ page isELIgnored="false" %>
+<%@include file="/WEB-INF/views/header.jsp" %>
+<title>Financial Management</title>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="mx-auto">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/"><b>Financial Management</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/logged/">Powrót do widoku użytkownika</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="createCategory">Dodaj kategorię</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Wyloguj</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
 </head>
 <body>
-<div><a href="/logout">Wyloguj</a></div>
-
-<div><a href="/logged">Powrót do strony głównej</a>, <a href="/logged/show/${id}/createIncome">Dodaj przychód</a>,
-    <a href="/logged/show/${id}/createOutcome">Dodaj wydatek</a>, <a href="/logged/show/${id}/createCategory">Dodaj kategorię</a></div>
-
-<table border="1">
-    <thead>
-    <th>Nazwa kategorii</th>
-    <th>Akcja</th>
-    </thead>
-    <tbody>
-    <tbody>
+<div class="text">Wszystkie kategorie</div>
+<div class="grid2">
+    <div class="item2">Nazwa kategorii</div>
+    <div class="item2">Akcja</div>
     <c:forEach items="${categories}" var="category">
-        <tr>
-            <td><c:out value="${category.categoryName}"/></td>
-            <td><a href="/logged/show/${id}/show-category/${category.id}">Pokaż</a>
-                <a href="/logged/show/${id}/edit-category/${category.id}">Edytuj</a>
-                <a href="/logged/show/${id}/delete-category/${category.id}">Usuń</a></td>
-        </tr>
+
+        <div><c:out value="${category.categoryName}"/></div>
+        <div><a href="/logged/show/${id}/show-category/${category.id}">Pokaż</a>
+            <a href="/logged/show/${id}/edit-category/${category.id}">Edytuj</a>
+            <a href="/logged/show/${id}/delete-category/${category.id}">Usuń</a></div>
+
     </c:forEach>
-    </tbody>
-</table>
+</div>
 </body>
 </html>

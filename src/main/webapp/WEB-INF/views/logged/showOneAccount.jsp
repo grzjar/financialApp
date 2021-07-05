@@ -1,84 +1,92 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Financial Management</title>
+<%@ page isELIgnored="false" %>
+<%@include file="/WEB-INF/views/header.jsp" %>
+<title>Financial Management</title>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="mx-auto">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/"><b>Financial Management</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/logged/">Powrót do widoku użytkownika</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logged/show/${id}/createIncome">Dodaj przychód</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logged/show/${id}/createOutcome">Dodaj wydatek</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logged/show/${id}/show-all">Pokaż kategorie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Wyloguj</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
 </head>
 <body>
-<div><a href="/logout">Wyloguj</a></div>
-
-<div><a href="/logged/">Powrót do strony głównej</a>, <a href="/logged/show/${id}/createIncome">Dodaj przychód</a>,
-<a href="/logged/show/${id}/createOutcome">Dodaj wydatek</a>, <a href="/logged/show/${id}/show-all">Pokaż dostępne kategorie</a></div>
-
-<table border="1">
-    <thead>
-    <th>Nazwa konta</th>
-    <th>Data stworzenia</th>
-    <th>Suma wpływów</th>
-    <th>Suma wydatków</th>
-    <th>Suma</th>
-    <th>Waluta</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td><c:out value="${account.accountName}"/></td>
-            <td><c:out value="${account.createdOn}"/></td>
-            <td><c:out value="${account.sumIncome}"/></td>
-            <td><c:out value="${account.sumOutcome}"/></td>
-            <td><c:out value="${account.sum}"/></td>
-            <td><c:out value="${account.currency}"/></td>
-        </tr>
-    </tbody>
-
-</table>
+<div class="text">Pojedyncze konto</div>
+<div class="grid6">
+        <div class="item2">Nazwa konta</div>
+        <div class="item2">Data stworzenia</div>
+        <div class="item2">Suma wpływów</div>
+        <div class="item2">Suma wydatków</div>
+        <div class="item2">Suma</div>
+        <div class="item2">Waluta</div>
+        <div><c:out value="${account.accountName}"/></div>
+        <div><c:out value="${account.createdOn}"/></div>
+        <div><c:out value="${account.sumIncome}"/></div>
+        <div><c:out value="${account.sumOutcome}"/></div>
+        <div><c:out value="${account.sum}"/></div>
+        <div><c:out value="${account.currency}"/></div>
+    </div>
+</div>
 <br>
 <br>
-<table border="1">
-    <thead>
-    <th>Kategoria</th>
-    <th>Wartość</th>
-    <th>Data stworzenia</th>
-    <th>Akcja</th>
-    </thead>
-    <tbody>
+<div class="grid4">
+    <div class="item1">Przychody</div>
+    <div class="item2">Kategoria</div>
+    <div class="item2">Wartość</div>
+    <div class="item2">Data stworzenia</div>
+    <div class="item2">Akcja</div>
+
     <c:forEach items="${incomes}" var="income">
-        <tr>
-            <td><c:out value="${income.category}"/></td>
-            <td><c:out value="${income.value}"/></td>
-            <td><c:out value="${income.createdOn}"/></td>
-            <td><a href="/logged/show/${id}/show-income/${income.id}">Pokaż</a>
-                <a href="/logged/show/${id}/edit-income/${income.id}">Edytuj</a>
-                <a href="/logged/show/${id}/delete-income/${income.id}">Usuń</a></td>
-        </tr>
+        <div><c:out value="${income.category}"/></div>
+        <div><c:out value="${income.value}"/></div>
+        <div><c:out value="${income.createdOn}"/></div>
+        <div><a href="/logged/show/${id}/show-income/${income.id}">Pokaż</a>
+            <a href="/logged/show/${id}/edit-income/${income.id}">Edytuj</a>
+            <a href="/logged/show/${id}/delete-income/${income.id}">Usuń</a></div>
     </c:forEach>
-    </tbody>
-</table>
+</div>
 <br>
 <br>
-<table border="1">
-    <thead>
-    <th>Kategoria</th>
-    <th>Wartość</th>
-    <th>Data stworzenia</th>
-    <th>Akcja</th>
-    </thead>
-    <tbody>
+<div class="grid4">
+    <div class="item1">Wydatki</div>
+
+    <div class="item2">Kategoria</div>
+    <div class="item2">Wartość</div>
+    <div class="item2">Data stworzenia</div>
+    <div class="item2">Akcja</div>
+
     <c:forEach items="${outcomes}" var="outcome">
-        <tr>
-            <td><c:out value="${outcome.category}"/></td>
-            <td><c:out value="${outcome.value}"/></td>
-            <td><c:out value="${outcome.createdOn}"/></td>
-            <td><a href="/logged/show/${id}/show-outcome/${outcome.id}">Pokaż</a>
-                <a href="/logged/show/${id}/edit-outcome/${outcome.id}">Edytuj</a>
-                <a href="/logged/show/${id}/delete-outcome/${outcome.id}">Usuń</a></td>
-        </tr>
+        <div><c:out value="${outcome.category}"/></div>
+        <div><c:out value="${outcome.value}"/></div>
+        <div><c:out value="${outcome.createdOn}"/></div>
+        <div><a href="/logged/show/${id}/show-outcome/${outcome.id}">Pokaż</a>
+            <a href="/logged/show/${id}/edit-outcome/${outcome.id}">Edytuj</a>
+            <a href="/logged/show/${id}/delete-outcome/${outcome.id}">Usuń</a></div>
     </c:forEach>
-    </tbody>
-</table>
-
-
+</div>
 </body>
 </html>
