@@ -32,7 +32,7 @@
     <p>Czy usunąć pozycję: ${income.category}, ${income.description}?</p>
     <p>
         <input type="hidden" name="id" value="${income.id}"/>
-        <a href="/logged/">Nie</a><button type="submit">Tak</button>
+        <a class="btn btn-primary" href="/logged/" role="button">Nie</a><button class="btn btn-primary"  type="submit">Tak</button>
     </p>
 </form>
 </div>

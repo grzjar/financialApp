@@ -29,7 +29,7 @@
     <label class="form-label">Hasło:
         <input type="password" name="password" class="form-control" placeholder="Hasło"/>
     </label><br/>
-    <button type="submit">Zaloguj</button>
+    <button class="btn btn-primary" type="submit">Zaloguj</button>
 </form>
 </div>
 </body>

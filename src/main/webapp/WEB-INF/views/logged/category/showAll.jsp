@@ -36,9 +36,9 @@
     <c:forEach items="${categories}" var="category">
 
         <div><c:out value="${category.categoryName}"/></div>
-        <div><a href="/logged/show/${id}/show-category/${category.id}">Pokaż</a>
-            <a href="/logged/show/${id}/edit-category/${category.id}">Edytuj</a>
-            <a href="/logged/show/${id}/delete-category/${category.id}">Usuń</a></div>
+        <div><a class="btn btn-primary" href="/logged/show/${id}/show-category/${category.id}" role="button">Pokaż</a>
+            <a class="btn btn-primary" href="/logged/show/${id}/edit-category/${category.id}" role="button">Edytuj</a>
+            <a class="btn btn-primary" href="/logged/show/${id}/delete-category/${category.id}" role="button">Usuń</a></div>
 
     </c:forEach>
 </div>

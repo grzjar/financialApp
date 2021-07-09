@@ -32,7 +32,7 @@
     <p>Czy usunąć konto ${account.accountName} (id = ${account.id})?</p>
     <p>
         <input type="hidden" name="id" value="${account.id}"/>
-        <a href="/logged/logged">Nie</a><button type="submit">Tak</button>
+        <a class="btn btn-primary" href="/logged/" role="button">Nie</a><button class="btn btn-primary" type="submit">Tak</button>
     </p>
 </form>
 </div>

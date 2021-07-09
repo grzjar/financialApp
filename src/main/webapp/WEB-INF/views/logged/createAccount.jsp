@@ -32,7 +32,7 @@
     <label class="form-label">Nazwa konta:
         <form:input path="accountName"/>
     </label><br/>
-    <form:button type="submit">Dodaj</form:button>
+    <form:button class="btn btn-primary" type="submit">Dodaj</form:button>
 </form:form>
 </div>
 </body>

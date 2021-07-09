@@ -32,6 +32,28 @@
 </nav>
 </head>
 <body>
-
+<div class="grid3-img">
+    <div class="card" style="width: 18rem;">
+        <img src="/images/stooq.jpg" class="card-img-top">
+        <div class="card-body">
+            <p class="card-text">Strona z notowaniami giełdowymi</p>
+            <a href="https://stooq.com/" class="btn btn-primary">Idź do stooq.com</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img src="/images/ban.jpg" class="card-img-top">
+        <div class="card-body">
+            <p class="card-text">Portal finansowy</p>
+            <a href="https://www.bankier.pl/" class="btn btn-primary">Idź do bankier.pl</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img src="/images/rm.jpg" class="card-img-top">
+        <div class="card-body">
+            <p class="card-text">Zakochaj się w Realu Madryt</p>
+            <a href="https://www.realmadryt.pl/" class="btn btn-primary">Idź do RealMadryt.pl</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

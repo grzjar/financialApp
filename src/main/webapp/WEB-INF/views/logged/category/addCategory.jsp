@@ -32,7 +32,7 @@
     <label class="form-label">Kategoria:
         <form:input path="categoryName"/>
     </label><br/>
-    <form:button type="submit">Dodaj</form:button>
+    <form:button class="btn btn-primary" type="submit">Dodaj</form:button>
 </form:form>
 </div>
 </body>

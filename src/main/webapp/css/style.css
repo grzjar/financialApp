@@ -1,0 +1,157 @@
+body {
+    background-color: darkcyan;
+}
+
+.text{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 40px;
+    font-family: "Times New Roman";
+    color: aliceblue;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.item1 {
+    grid-column: 1 / span 4;
+    font-weight: bold;
+}
+
+.item2{
+    font-weight: bold;
+}
+
+.grid3-img{
+    margin-top: 100px;
+    position: relative;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: darkcyan;
+    text-align: center;
+}
+
+.grid3{
+    margin-top: 100px;
+    position: relative;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 4px;
+    background-color: lightcyan;
+    text-align: center;
+}
+
+.grid3 > div{
+    background-color: lightcyan;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 15px;
+    color: darkcyan;
+}
+
+.grid6{
+    margin-top: 100px;
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 4px;
+    background-color: lightcyan;
+    text-align: center;
+}
+
+.grid6 > div{
+    background-color: lightcyan;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 15px;
+    color: darkcyan;
+}
+
+.grid4{
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 4px;
+    background-color: lightcyan;
+    text-align: center;
+}
+
+.grid4 > div{
+    background-color: lightcyan;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 15px;
+    color: darkcyan;
+}
+
+
+
+.grid5{
+    margin-top: 100px;
+    position: relative;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 4px;
+    background-color: lightcyan;
+    text-align: center;
+}
+
+.grid5 > div{
+    background-color: lightcyan;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 15px;
+    color: darkcyan;
+}
+
+.grid2{
+    margin-top: 100px;
+    position: relative;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 4px;
+    background-color: lightcyan;
+    text-align: center;
+}
+
+.grid2 > div{
+    background-color: lightcyan;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 15px;
+    color: darkcyan;
+}
+
+.grid1{
+    margin-top: 100px;
+    position: relative;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 4px;
+    background-color: lightcyan;
+    text-align: center;
+}
+
+.grid1 > div{
+    background-color: lightcyan;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 15px;
+    color: darkcyan;
+}

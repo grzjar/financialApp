@@ -35,7 +35,7 @@
     <label class="form-label">Hasło:
         <form:password class="form-control" path="password" placeholder="Podaj hasło"/>
     </label><br/>
-    <form:button type="submit">Dodaj</form:button>
+    <form:button class="btn btn-primary" type="submit">Dodaj</form:button>
 </form:form>
 </div>
 </body>

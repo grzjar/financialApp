@@ -33,16 +33,16 @@
         <form:select path="category">
             <form:option value="-" label="--Please Select--"/>
             <form:options items="${categories}"/>
-        </form:select> lub <a href="/logged/show/${id}/createCategory">Dodaj kategorię</a>.
+        </form:select> lub <a class="btn btn-primary" href="/logged/show/${id}/createCategory" role="button">Dodaj kategorię</a>.
     </label><br/>
     <label class="form-label">Kwota:
         <form:input path="value"/>
     </label><br/>
-    <label class="form-label">Description:
+    <label class="form-label">Opis:
         <form:input path="description"/>
     </label><br/>
     <form:hidden path="id"/>
-    <form:button type="submit">Edytuj</form:button>
+    <form:button class="btn btn-primary" type="submit">Edytuj</form:button>
 </form:form>
 </body>
 </html>

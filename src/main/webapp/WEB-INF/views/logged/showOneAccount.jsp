@@ -64,9 +64,9 @@
         <div><c:out value="${income.category}"/></div>
         <div><c:out value="${income.value}"/></div>
         <div><c:out value="${income.createdOn}"/></div>
-        <div><a href="/logged/show/${id}/show-income/${income.id}">Pokaż</a>
-            <a href="/logged/show/${id}/edit-income/${income.id}">Edytuj</a>
-            <a href="/logged/show/${id}/delete-income/${income.id}">Usuń</a></div>
+        <div><a class="btn btn-primary" href="/logged/show/${id}/show-income/${income.id}" role="button">Pokaż</a>
+            <a class="btn btn-primary" href="/logged/show/${id}/edit-income/${income.id}" role="button">Edytuj</a>
+            <a class="btn btn-primary"  href="/logged/show/${id}/delete-income/${income.id}" role="button">Usuń</a></div>
     </c:forEach>
 </div>
 <br>
@@ -83,9 +83,9 @@
         <div><c:out value="${outcome.category}"/></div>
         <div><c:out value="${outcome.value}"/></div>
         <div><c:out value="${outcome.createdOn}"/></div>
-        <div><a href="/logged/show/${id}/show-outcome/${outcome.id}">Pokaż</a>
-            <a href="/logged/show/${id}/edit-outcome/${outcome.id}">Edytuj</a>
-            <a href="/logged/show/${id}/delete-outcome/${outcome.id}">Usuń</a></div>
+        <div><a class="btn btn-primary" href="/logged/show/${id}/show-outcome/${outcome.id}" role="button">Pokaż</a>
+            <a class="btn btn-primary" href="/logged/show/${id}/edit-outcome/${outcome.id}" role="button">Edytuj</a>
+            <a class="btn btn-primary" href="/logged/show/${id}/delete-outcome/${outcome.id}" role="button">Usuń</a></div>
     </c:forEach>
 </div>
 </body>

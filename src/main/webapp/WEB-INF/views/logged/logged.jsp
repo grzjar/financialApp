@@ -42,9 +42,9 @@
 
                 <div><c:out value="${account.accountName}"/></div>
                 <div><c:out value="${account.createdOn}"/></div>
-                <div><a href="/logged/show/${account.id}">Pokaż</a>
-                    <a href="/logged/edit?id=${account.id}">Edytuj</a>
-                    <a href="/logged/delete?id=${account.id}">Usuń</a></div>
+                <div><a class="btn btn-primary" href="/logged/show/${account.id}" role="button">Pokaż</a>
+                    <a class="btn btn-primary" href="/logged/edit?id=${account.id}" role="button">Edytuj</a>
+                    <a class="btn btn-primary" href="/logged/delete?id=${account.id}" role="button">Usuń</a></div>
 
         </c:forEach>
 
