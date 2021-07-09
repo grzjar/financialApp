@@ -42,5 +42,4 @@
 
     </c:forEach>
 </div>
-</body>
-</html>
+<%@include file="/WEB-INF/views/footer.jsp" %>

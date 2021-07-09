@@ -35,7 +35,7 @@ public class CategoryController {
         category.setAccount(accountService.getById(id).get());
         category.setId(null);
         categoryService.addNew(category);
-        return "redirect:/logged/";
+        return "redirect:/logged/show/{id}/";
     }
 
     //w przyszłości może wyświetlanie wydatków/wpływów per kategoria

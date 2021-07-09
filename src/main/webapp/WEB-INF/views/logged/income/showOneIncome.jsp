@@ -49,6 +49,4 @@
     <div><c:out value="${income.createdOn}"/></div>
     <div><c:out value="${income.description}"/></div>
 </div>
-
-</body>
-</html>
+<%@include file="/WEB-INF/views/footer.jsp" %>

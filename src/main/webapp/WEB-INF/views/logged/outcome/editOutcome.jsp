@@ -44,5 +44,4 @@
     <form:hidden path="id"/>
     <form:button class="btn btn-primary" type="submit">Edytuj</form:button>
 </form:form>
-</body>
-</html>
+<%@include file="/WEB-INF/views/footer.jsp" %>

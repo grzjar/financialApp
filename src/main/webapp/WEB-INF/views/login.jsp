@@ -32,5 +32,4 @@
     <button class="btn btn-primary" type="submit">Zaloguj</button>
 </form>
 </div>
-</body>
-</html>
+<%@include file="/WEB-INF/views/footer.jsp" %>

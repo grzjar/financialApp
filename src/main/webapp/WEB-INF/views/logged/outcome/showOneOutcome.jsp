@@ -50,5 +50,4 @@
     <div><c:out value="${outcome.description}"/></div>
 </div>
 
-</body>
-</html>
+<%@include file="/WEB-INF/views/footer.jsp" %>

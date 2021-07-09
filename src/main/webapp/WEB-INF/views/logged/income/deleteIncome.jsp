@@ -32,9 +32,8 @@
     <p>Czy usunąć pozycję: ${income.category}, ${income.description}?</p>
     <p>
         <input type="hidden" name="id" value="${income.id}"/>
-        <a class="btn btn-primary" href="/logged/" role="button">Nie</a><button class="btn btn-primary"  type="submit">Tak</button>
+        <a class="btn btn-primary" href="/logged/show/${id}" role="button">Nie</a> <button class="btn btn-primary"  type="submit">Tak</button>
     </p>
 </form>
 </div>
-</body>
-</html>
+<%@include file="/WEB-INF/views/footer.jsp" %>

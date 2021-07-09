@@ -1,5 +1,7 @@
 body {
     background-color: darkcyan;
+    padding-bottom:30px;
+    margin-bottom: 30px;
 }
 
 .text{
@@ -8,6 +10,19 @@ body {
     font-size: 40px;
     font-family: "Times New Roman";
     color: aliceblue;
+}
+
+.text-foot{
+    text-align: center;
+    font-family: "Times New Roman";
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    background-color: lightcyan;
+    height: 30px;
+    width: 100%;
 }
 
 .center{

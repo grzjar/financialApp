@@ -33,12 +33,12 @@ public class OutcomeController {
         return "logged/outcome/createOutcome";
     }
 
-    @PostMapping("show/{id}/createOutcome")
+    @PostMapping("show/{id}/")
     public String create(Outcome outcome, @PathVariable Long id){
         outcome.setAccount(accountService.getById(id).get());
         outcome.setId(null);
         outcomeService.addNew(outcome);
-        return "redirect:/logged/";
+        return "redirect:/logged/show/{id1}";
     }
 
     @GetMapping("show/{id1}/show-outcome/{id2}")
@@ -58,7 +58,7 @@ public class OutcomeController {
     }
 
     @PostMapping("show/{id1}/edit-outcome/{id2}")
-    public String edit(Outcome outcome, @PathVariable Long id1, Model model, @PathVariable Long id2){
+    public String edit(Outcome outcome, @PathVariable Long id1, Model model){
         model.addAttribute("id", id1);
         outcomeService.edit(outcome);
         return "redirect:/logged/show/{id1}";
@@ -72,7 +72,7 @@ public class OutcomeController {
         return "logged/outcome/deleteOutcome";
     }
 
-    @PostMapping("show/{id1}/delete-outcome/{id2}")
+    @PostMapping("show/{id1}")
     private String delete(Outcome outcome, @PathVariable Long id1, Model model){
         model.addAttribute("id", id1);
         outcomeService.delete(outcome.getId());

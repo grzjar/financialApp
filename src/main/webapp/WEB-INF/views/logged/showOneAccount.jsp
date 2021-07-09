@@ -88,5 +88,4 @@
             <a class="btn btn-primary" href="/logged/show/${id}/delete-outcome/${outcome.id}" role="button">Usuń</a></div>
     </c:forEach>
 </div>
-</body>
-</html>
+<%@include file="/WEB-INF/views/footer.jsp" %>
