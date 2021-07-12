@@ -33,12 +33,12 @@ public class OutcomeController {
         return "logged/outcome/createOutcome";
     }
 
-    @PostMapping("show/{id}/")
+    @PostMapping("show/{id}/createOutcome")
     public String create(Outcome outcome, @PathVariable Long id){
         outcome.setAccount(accountService.getById(id).get());
         outcome.setId(null);
         outcomeService.addNew(outcome);
-        return "redirect:/logged/show/{id1}";
+        return "redirect:/logged/show/{id}";
     }
 
     @GetMapping("show/{id1}/show-outcome/{id2}")

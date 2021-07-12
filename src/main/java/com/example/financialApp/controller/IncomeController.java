@@ -33,12 +33,12 @@ public class IncomeController {
         return "logged/income/createIncome";
     }
 
-    @PostMapping("show/{id}")
+    @PostMapping("show/{id}/createIncome")
     public String create(Income income, @PathVariable Long id){
         income.setAccount(accountService.getById(id).get());
         income.setId(null);
         incomeService.addNew(income);
-        return "redirect:/logged/show/{id1}";
+        return "redirect:/logged/show/{id}";
     }
 
     @GetMapping("show/{id1}/show-income/{id2}")
