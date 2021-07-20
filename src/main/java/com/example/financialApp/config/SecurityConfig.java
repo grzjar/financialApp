@@ -41,6 +41,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login").permitAll()
                 .antMatchers("/").permitAll()
                 .antMatchers("/logged/*").hasRole("USER")
+                //TODO Nie stosować takich zapisów
+                //     Zabezpieczenia ogólne, "odbezpieczenia" szczegółowe
                 .antMatchers("/*").permitAll()
                 .antMatchers("/images/*").permitAll()
                 .anyRequest().authenticated() //gdybyśmy o czymś zapomnieli to lepiej pozostawić to tu - musi być na końcu

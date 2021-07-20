@@ -4,6 +4,7 @@ import com.example.financialApp.model.Account;
 import com.example.financialApp.model.User;
 import com.example.financialApp.repository.AccountRepository;
 import com.example.financialApp.repository.UserRepository;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,15 @@ public class AccountService{
 
     //wydzielenie metody, by mieć dostęp do Usera
     public User getUser(){
+        //TODO Lepiej byłoby mieć dwie metody findByUsername i getByUsername, bo jeżeli pobierasz na podstawie
+        //     nazwy zalogowane użytkownika, to nie ma kejsu, że go nie będzie.
         User user = userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName()).orElseThrow(()-> new UsernameNotFoundException("Nie ma takiego użytkownika"));
+        return user;
+    }
+
+    @Secured("isAuthenticated()")
+    public User getCurrentUser() {
+        User user = userRepository.getUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
         return user;
     }
 

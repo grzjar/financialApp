@@ -23,6 +23,7 @@ public class Income {
     @Column(scale = 2)
     private Double value;
     private String currency = "PLN";
+    //TODO LocalDateTime zamiast String + @DateTimeFormat("yyyy-MM-dd HH:mm:ss)
     @Column(name="created_on")
     private String createdOn;
 

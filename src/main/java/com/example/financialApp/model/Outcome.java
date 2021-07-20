@@ -21,6 +21,8 @@ public class Outcome {
     private Double value;
     private String currency = "PLN";
     @Column(name="created_on")
+    //TODO LocalDateTime zamiast String
+    //TODO Użyć @DateTimeFormat jeżeli się nie konwertuje z parametrów żądania
     private String createdOn;
 
     @PrePersist

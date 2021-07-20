@@ -28,6 +28,7 @@ public class IncomeService {
         return incomeRepository.findById(id);
     }
 
+    //TODO Zmienić nazwy zmiennych, mają być SELF DESCRIBING !!!
     public void edit(Income income) {
         Optional<Income> i1 = getById(income.getId());
         if(i1.isPresent()){

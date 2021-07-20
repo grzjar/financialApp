@@ -59,6 +59,7 @@ public class CategoryService {
         }
     }
 
+    //TODO Ciekawa nazwa metody :)
     public List<Category> getAllX(Long id) {
         return categoryRepository.findAllByAccount_Id(id);
     }

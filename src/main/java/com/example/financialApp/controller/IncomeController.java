@@ -41,11 +41,11 @@ public class IncomeController {
         return "redirect:/logged/show/{id1}";
     }
 
-    @GetMapping("show/{id1}/show-income/{id2}")
-    public String show(Model model, @PathVariable Long id1, @PathVariable Long id2){
-        model.addAttribute("categories", categoryService.getAll(id1));
-        model.addAttribute("id", id1);
-        model.addAttribute("income", incomeService.getById(id2).get());
+    @GetMapping("show/{categoryId}/show-income/{incomeId}")
+    public String show(Model model, @PathVariable Long categoryId, @PathVariable Long incomeId){
+        model.addAttribute("categories", categoryService.getAll(categoryId));
+        model.addAttribute("id", categoryId);
+        model.addAttribute("income", incomeService.getById(incomeId).get());
         return "logged/income/showOneIncome";
     }
 
